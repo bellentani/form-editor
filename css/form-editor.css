@@ -1,0 +1,21 @@
+/* CSS Document */
+.form-editor .form-group, .form-editor .checkbox, .form-editor .radio {
+}
+.form-editor .disabled {
+	border:1px dotted #f1f1f1;
+	box-shadow:none;
+	cursor: default;
+	background-color:transparent;
+	opacity: 1;
+	color:inherit;
+}
+.form-editor .disabled textarea {
+	height:auto;
+	display:block;
+}
+.form-editor .disabled.nodisplay {
+	display:none;
+}
+.form-editor .edit {
+	float:right;
+}
