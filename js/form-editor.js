@@ -1,6 +1,9 @@
 // JavaScript Document
 function formEditor () {
-
+    
+	//Bootstrap tooltip dependence
+	$('.edit').tooltip ();
+	
 	//turn on disabled form
 	var $input = $(".form-editor :input");
 	$input.attr('disabled', true).addClass('disabled');
@@ -27,6 +30,7 @@ function formEditor () {
 		
 		//show form submit button
 		$('.trigger-submit').attr('disabled', false).fadeIn('slow').removeClass('disabled');
+		$(this).parent().children('.tooltip').remove();
 		
 		//hide button
 		$(this).fadeOut('slow').queue(function() {
@@ -37,9 +41,12 @@ function formEditor () {
 	
 	//turn on all fields
 	$('.edit-all').click(function() {
-		pathEle = $(this).parent().children('.disabled');
+		pathEle = $('.disabled');
 		pathEle.attr('disabled', false).fadeIn('slow').removeClass('disabled');
 		$(this).slideUp('slow').queue(function() {
+      		$(this).remove().dequeue();
+    	});
+		$('.edit').fadeOut('slow').queue(function() {
       		$(this).remove().dequeue();
     	});
 		

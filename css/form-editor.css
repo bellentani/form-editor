@@ -19,3 +19,6 @@
 .form-editor .edit {
 	float:right;
 }
+.form-editor .edit, .form-editor .edit-all {
+	cursor:pointer;
+}
