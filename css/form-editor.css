@@ -9,9 +9,8 @@
 	opacity: 1;
 	color:inherit;
 }
-.form-editor .disabled textarea {
-	height:auto;
-	display:block;
+.form-editor textarea.disabled {
+	resize:none;
 }
 .form-editor .disabled.nodisplay {
 	display:none;

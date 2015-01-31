@@ -4,25 +4,24 @@ function formEditor () {
 	//Bootstrap tooltip dependence
 	$('.edit').tooltip ();
 	
-	//turn on disabled form
+	//change all form items state to disabled
 	var $input = $(".form-editor :input");
 	$input.attr('disabled', true).addClass('disabled');
 	
+	//get paths
+	var pathEle = $(this).parent().children('.disabled');
+	var pathCheRad = $(this).parent().children('label').children('.disabled');
+	
 	//turn on editable fields on click
 	$('.edit').click(function() {
-		//$(this).removeClass('disabled-children');
 		
-		//get paths
-		pathEle = $(this).parent().children('.disabled');
-		pathCheRad = $(this).parent().children('label').children('.disabled');
-		
-		//$attr('disabled', false).focus().removeClass('disabled');
-		
+		//disable inputs
 		pathEle
 		.attr('disabled', false)
-		.focus()
+		.focus() //set focus to element
 		.removeClass('disabled');
 		
+		//disable radio & checkboxes
 		pathCheRad
 		.attr('disabled', false)
 		.focus()
@@ -30,12 +29,14 @@ function formEditor () {
 		
 		//show form submit button
 		$('.trigger-submit').attr('disabled', false).fadeIn('slow').removeClass('disabled');
-		$(this).parent().children('.tooltip').remove();
 		
-		//hide button
+		//hide and remove edit button
 		$(this).fadeOut('slow').queue(function() {
       		$(this).remove().dequeue();
     	});
+		
+		//remove tooltip html on click too
+		$(this).parent().children('.tooltip').remove();
 		
 	});
 	
@@ -51,11 +52,4 @@ function formEditor () {
     	});
 		
 	});
-	
-	/*$(this).on(click, function () {
-		$(this).attr('disabled', false).removeClass('disabled');
-		alert('hey')
-	});
-	*/
-	//alert($input);
 }
