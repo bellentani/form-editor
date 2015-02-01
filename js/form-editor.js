@@ -10,10 +10,10 @@ function formEditor () {
 	
 	//get paths
 	var pathEle = $(this).parent().children('.disabled');
-	var pathCheRad = $(this).parent().children('label').children('.disabled');
+	var pathCheRad = $(this).parents().children('label').children('.disabled');
 	
 	//turn on editable fields on click
-	$('.edit').click(function() {
+	$('.form-edit').click(function() {
 		
 		//disable inputs
 		pathEle
@@ -41,7 +41,7 @@ function formEditor () {
 	});
 	
 	//turn on all fields
-	$('.edit-all').click(function() {
+	$('.form-edit-all').click(function() {
 		pathEle = $('.disabled');
 		pathEle.attr('disabled', false).fadeIn('slow').removeClass('disabled');
 		$(this).slideUp('slow').queue(function() {

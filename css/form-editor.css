@@ -15,9 +15,9 @@
 .form-editor .disabled.nodisplay {
 	display:none;
 }
-.form-editor .edit {
+.form-editor .form-edit {
 	float:right;
 }
-.form-editor .edit, .form-editor .edit-all {
+.form-editor .edit, .form-editor .form-edit-all {
 	cursor:pointer;
 }
